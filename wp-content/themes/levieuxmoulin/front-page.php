@@ -3,23 +3,7 @@
     <main id="main-content" class="main__content">
         <?php get_template_part('templates/partials/hero-section') ?>
 
-        <?php if (have_rows('houses_section')): ?>
-            <section class="houses">
-                <h2 class="title"><?=  get_field('houses_section_title'); ?></h2>
-                <div class="houses__grid">
-                    <?php while(have_rows('houses_section_cards')): the_row();
-                        $page_id = get_sub_field('page');
-                        $card_data = [
-                            'title' => get_the_title($page_id),
-                            'description' => get_the_excerpt($page_id),
-                            'image' => get_post_thumbnail_id($page_id),
-                            'link' => get_permalink($page_id)
-                        ];
-                        get_template_part('templates/partials/card-houses', null, $card_data);
-                    endwhile; ?>
-                </div>
-            </section>
-        <?php endif; ?>
+        <?php get_template_part('templates/partials/card-houses') ?>
 
         <?php if (have_rows('history_section')): ?>
             <section class="history">
