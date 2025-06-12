@@ -9,6 +9,41 @@
     <main id="main-content" class="main__content">
         <?php get_template_part('templates/partials/hero-section') ?>
 
+        <section class="news featured">
+            <h2 class="news__title"><?php _e('À la une', 'levm'); ?></h2>
+            <div class="news__grid featured-news">
+                <?php
+                $featured_news = new WP_Query([
+                    'post_type' => 'news',
+                    'posts_per_page' => 4,
+                    'meta_key' => 'featured',
+                    'meta_value' => '1'
+                ]);
+
+                while ($featured_news->have_posts()) : $featured_news->the_post();
+                    get_template_part('templates/partials/card-news');
+                endwhile;
+                wp_reset_postdata();
+                ?>
+            </div>
+        </section>
+
+        <section class="news all__news">
+            <h2 class="news__title"><?php _e('Toutes les actualités', 'levm'); ?></h2>
+            <div class="news__grid all__news">
+                <?php
+                $all_news = new WP_Query([
+                    'post_type' => 'news',
+                    'posts_per_page' => -1
+                ]);
+
+                while ($all_news->have_posts()) : $all_news->the_post();
+                    get_template_part('templates/partials/card-news');
+                endwhile;
+                wp_reset_postdata();
+                ?>
+            </div>
+        </section>
     </main>
 
 <?php get_footer() ?>
