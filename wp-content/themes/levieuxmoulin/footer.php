@@ -54,7 +54,7 @@
     </div>
 
     <article class="footer__copyright">
-        <h3 class="sro"><?php _e('Mentions légales', 'portfolio-detective'); ?></h3>
+        <h3 class="sro"><?php _e('Mentions légales', 'levm'); ?></h3>
         <p><?php echo __('Copyright © Le Vieux Moulin. Tous droits réservés.', 'levm'); ?></p>
         <a href="<?php home_url(__('/mentions-legales', 'levm')); ?>"
            title="<?php _e('Voir les mentions légales', 'levm'); ?>">
