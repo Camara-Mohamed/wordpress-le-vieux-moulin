@@ -9,17 +9,12 @@ add_action('after_setup_theme', function () {
     show_admin_bar(false);
 });
 
-function lvm_setup_theme() {
+function levm_setup_theme() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', ['search-form', 'comment-form', 'gallery', 'caption']);
-
-    register_nav_menus([
-        'main' => 'Menu principal',
-        'preheader' => 'Menu secondaire (pré-navigation)',
-    ]);
 }
-add_action('after_setup_theme', 'lvm_setup_theme');
+add_action('after_setup_theme', 'levm_setup_theme');
 
 // Nettoyage du <head>
 remove_action('wp_head', 'wp_generator');
