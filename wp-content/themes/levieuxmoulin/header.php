@@ -105,6 +105,10 @@
         <h2 class="sro" aria-level="2"><?php _e('Navigation principale',
                 'levm'); ?></h2>
 
+        <a class="header__nav--title" href="<?= home_url('/'); ?>" itemprop="url"
+           title="<?php _e('Aller à la page d\'accueil', 'levm');
+           ?>">
+
         <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>
         <label for="burger-menu" class="header__nav--burger">
             <svg class="burger-icon" viewBox="0 0 448 512" width="35" height="35">
