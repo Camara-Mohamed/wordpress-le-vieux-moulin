@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Nous Contacter
+ * Template Name: Nos actualités
  */
 ?>
 
