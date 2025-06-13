@@ -1,4 +1,11 @@
-@use "utils/reset.css";
+@use "utils/reset";
+@use "base/breakpoints";
+@use "base/fonts";
+@use "base/variables";
+@use "base/general";
 
 @use "general/header";
 @use "general/footer";
+@use "general/navigation";
+@use "general/hero";
+@use "general/burger";
