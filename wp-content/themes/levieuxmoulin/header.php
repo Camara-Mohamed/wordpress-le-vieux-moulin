@@ -47,6 +47,8 @@
 
 </head>
 <body>
+<h1 class="sro" role="heading" aria-level="1"><?= get_the_title(); ?></h1>
+
 <noscript>
     <p class="no-js__message">
         <?php _e('Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.',
@@ -58,8 +60,6 @@
     </p>
 </noscript>
 
-<h1 class="sro" role="heading" aria-level="1"><?= get_the_title(); ?></h1>
-
 <a class="skip__link" href="#main-content"><?php _e('Aller au contenu principal', 'levm') ?></a>
 
 <header class="header">
@@ -68,12 +68,14 @@
     <div class="header__pre--nav">
         <h2 class="sro" aria-level="2"><?php _e('Navigation secondaire',
                 'levm'); ?></h2>
-        <div class="header__contact">
-            <p><?= get_field('contact_email', 'option'); ?></p>
-            <p><?= get_field('contact_phone', 'option'); ?></p>
-        </div>
 
-        <div class="header__social">
+        <div class="header__container">
+            <div class="header__contact">
+                <p><?= get_field('contact_email', 'option'); ?></p>
+                <p><?= get_field('contact_phone', 'option'); ?></p>
+            </div>
+
+            <div class="header__social">
             <?php if (have_rows('social_links', 'option')): ?>
                 <?php while (have_rows('social_links', 'option')): the_row(); ?>
                     <a href="<?php the_sub_field('url'); ?>" target="_blank">
@@ -84,19 +86,20 @@
                     </a>
                 <?php endwhile; ?>
             <?php endif; ?>
+            </div>
+        </div>
 
-            <div class="header__languages">
-                <?php
-                if (function_exists('pll_the_languages')) {
-                    $languages = pll_the_languages(array('raw' => 1, 'echo' => 0));
-                    if ($languages) {
-                        foreach ((array) $languages as $lang) {
-                            echo '<a href="'.$lang['url'].'" class="'.(!empty($lang['current']) ? 'active' : '').'">'.strtoupper($lang['slug']).'</a>';
-                        }
+        <div class="header__languages">
+            <?php
+            if (function_exists('pll_the_languages')) {
+                $languages = pll_the_languages(array('raw' => 1, 'echo' => 0));
+                if ($languages) {
+                    foreach ((array) $languages as $lang) {
+                        echo '<a href="'.$lang['url'].'" class="'.(!empty($lang['current']) ? 'active' : '').'">'.strtoupper($lang['slug']).'</a>';
                     }
                 }
-                ?>
-            </div>
+            }
+            ?>
         </div>
     </div>
 
@@ -107,7 +110,8 @@
 
         <a class="header__nav--title" href="<?= home_url('/'); ?>" itemprop="url"
            title="<?php _e('Aller à la page d\'accueil', 'levm');
-           ?>">
+           ?>"><?= get_bloginfo('name') ?>
+        </a>
 
         <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>
         <label for="burger-menu" class="header__nav--burger">
