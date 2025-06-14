@@ -65,29 +65,9 @@
 <header class="header">
     
     <!-- Pre-navigation -->
-    <div class="header__pre--nav">
+    <div class="header__before">
         <h2 class="sro" aria-level="2"><?php _e('Navigation secondaire',
                 'levm'); ?></h2>
-
-        <div class="header__container">
-            <div class="header__contact">
-                <p><?= get_field('contact_email', 'option'); ?></p>
-                <p><?= get_field('contact_phone', 'option'); ?></p>
-            </div>
-
-            <div class="header__social">
-            <?php if (have_rows('social_links', 'option')): ?>
-                <?php while (have_rows('social_links', 'option')): the_row(); ?>
-                    <a href="<?php the_sub_field('url'); ?>" target="_blank">
-                        <?php
-                        $icon = get_sub_field('icon');
-                        echo wp_get_attachment_image($icon, 'full');
-                        ?>
-                    </a>
-                <?php endwhile; ?>
-            <?php endif; ?>
-            </div>
-        </div>
 
         <div class="header__languages">
             <?php
@@ -129,6 +109,17 @@
                     <a href="<?= $link->href ?>" class="nav__item--link">
                         <?= $link->label ?>
                     </a>
+                    <?php if (!empty($link->children)): ?>
+                        <ul class="nav__submenu">
+                            <?php foreach ($link->children as $child): ?>
+                                <li class="nav__subitem<?= $child->current ? ' nav__subitem--current' : '' ?>">
+                                    <a href="<?= $child->href ?>" class="nav__subitem--link">
+                                        <?= $child->label ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
                 </li>
             <?php endforeach; ?>
         </ul>
