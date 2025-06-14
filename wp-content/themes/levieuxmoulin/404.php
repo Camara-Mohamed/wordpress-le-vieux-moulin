@@ -15,7 +15,7 @@
                        title="<?php _e('Revenir à l\'accueil', 'levm'); ?>">
                         <?php _e('Retour à l\'accueil', 'levm'); ?>
                     </a>
-                    <a href="<?= home_url(__('/actualités', 'levm')); ?>"
+                    <a href="<?= home_url(__('/actualites', 'levm')); ?>"
                        class="error-404__button button button__secondary"
                        aria-label="<?php _e('Voir nos actualités', 'levm'); ?>"
                        title="<?php _e('Voir toutes les actualités', 'levm'); ?>">

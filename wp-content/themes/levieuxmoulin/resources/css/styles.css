@@ -410,6 +410,91 @@ footer .footer__container, footer .footer__copyright {
   color: var(--c-blue-dark);
 }
 
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 0;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media only screen and (max-width: 599px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.hero__image {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+@media only screen and (max-width: 599px) {
+  .hero__image {
+    max-width: 100%;
+    order: 2;
+  }
+}
+.hero__image img {
+  height: auto;
+  max-height: 100%;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+.hero__content {
+  flex: 1 1 60%;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media only screen and (max-width: 599px) {
+  .hero__content {
+    max-width: 100%;
+    order: 1;
+  }
+}
+.hero__content .hero__title, .hero__content .error-404__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.hero__content .hero__subtitle, .hero__content .error-404__text {
+  opacity: 0.8;
+}
+.hero__content .hero__buttons, .hero__content .error-404__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.hero__content .button, .hero__content .error-404__action {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  color: var(--c-white);
+}
+.hero__content .button__primary, .hero__content .error-404__action__primary {
+  background-color: var(--c-blue-dark);
+  border: 0.0625rem solid var(--c-blue-dark);
+}
+.hero__content .button__primary:hover, .hero__content .button__primary:focus, .hero__content .error-404__action__primary:hover, .hero__content .error-404__action__primary:focus {
+  color: var(--c-blue-dark);
+  background-color: var(--c-white);
+  border: 0.0625rem solid var(--c-blue-dark);
+}
+.hero__content .button__secondary, .hero__content .error-404__action__secondary {
+  background-color: var(--c-brown);
+}
+.hero__content .button__secondary:hover, .hero__content .button__secondary:focus, .hero__content .error-404__action__secondary:hover, .hero__content .error-404__action__secondary:focus {
+  color: var(--c-brown);
+  background-color: var(--c-white);
+  border: 0.0625rem solid var(--c-brown);
+}
+
 .header {
   position: relative;
   z-index: 1000;
