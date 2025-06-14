@@ -3,7 +3,7 @@ import {globSync} from "glob";
 import * as fs from "fs";
 
 export default defineConfig({
-    base: "/wp-content/themes/portfolio/public/",
+    base: "/wp-content/themes/levieuxmoulin/public/",
     plugins: [
         {
             name: "bundle.js",
