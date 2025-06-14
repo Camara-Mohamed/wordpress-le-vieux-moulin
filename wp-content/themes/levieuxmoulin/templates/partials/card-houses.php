@@ -18,11 +18,11 @@
 
                 <div class="card--content">
                     <?php if ($title = get_sub_field('custom_title') ?: get_the_title($page_id)) : ?>
-                        <h3 class="card--title"><?= $title; ?></h3>
+                        <h3 class="title"><?= $title; ?></h3>
                     <?php endif; ?>
 
                     <?php if ($description = get_sub_field('custom_description') ?: get_the_excerpt($page_id)) : ?>
-                        <div class="card--description">
+                        <div class="description">
                             <?= $description; ?>
                         </div>
                     <?php endif; ?>
