@@ -19,7 +19,11 @@
                     <?php
                     $images = get_field('gallery');
                     foreach ($images as $image) : ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                        <a href="<?php echo $image['url']; ?>" title="Voir l'image en plus grand"
+                           data-fancybox="gallery"><img
+                                    src="<?php echo $image['url']; ?>"
+                                                                              alt="<?php
+                            echo $image['alt']; ?>"></a>
                     <?php endforeach; ?>
                 </div>
             </section>

@@ -10,6 +10,9 @@
     <meta name="keywords" content="Mohamed Camara, le vieux moulin, accueil, foyer, jeunes, mineurs, dons, actualités, aide à la jeunesse, jeune en difficulté">
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- Title -->
     <title>
         <?php
@@ -82,7 +85,7 @@
         </a>
 
         <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>
-        <label for="burger-menu" class="header__nav--burger" aria-expanded="false">
+        <label for="burger-menu" class="header__nav--burger">
             <span class="sro">Burger Menu</span>
             <svg class="burger-icon" viewBox="0 0 448 512" width="35" height="35">
                 <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
