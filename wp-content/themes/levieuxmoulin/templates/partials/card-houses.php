@@ -9,6 +9,7 @@
                     $link = get_permalink($page_id);
                     ?>
                     <article class="house__card">
+                        <h3 class="sro"><?php get_sub_field('custom_title'); ?></h3>
                         <a href="<?= $link; ?>" class="house__card--link"
                            title="Voir la maison : <?= get_sub_field('custom_title'); ?>">
                             <?php if ($image = get_sub_field('custom_image') ?: get_post_thumbnail_id($page_id)) : ?>

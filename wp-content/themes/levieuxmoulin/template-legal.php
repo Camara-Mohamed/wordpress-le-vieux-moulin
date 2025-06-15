@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-    <main id="main-content" class="main-content">
+    <main id="main-content" class="main__content" itemscope itemtype="https://schema.org/WebPage">
         <?php get_template_part('templates/partials/hero-section'); ?>
 
         <section class="legals">

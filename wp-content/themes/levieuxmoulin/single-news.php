@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-    <main id="main-content" class="main__content">
+    <main id="main-content" class="main__content" itemscope itemtype="https://schema.org/WebPage">
         <section class="news__hero">
             <div class="news__hero--content">
                 <h2><?php the_title(); ?></h2>

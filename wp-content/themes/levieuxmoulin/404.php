@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-    <main id="main-content" class="main__content">
+    <main id="main-content" class="main__content" itemscope itemtype="https://schema.org/WebPage">
         <section class="hero">
             <div class="hero__content">
                 <h2 id="error-title" class="error-404__title">Erreur 404</h2>

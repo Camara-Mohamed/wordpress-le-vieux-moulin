@@ -6,11 +6,11 @@
 
 <?php get_header() ?>
 
-    <main id="main-content" class="main__content">
+    <main id="main-content" class="main__content" itemscope itemtype="https://schema.org/WebPage">
         <?php get_template_part('templates/partials/hero-section') ?>
 
-        <section class="news featured">
-            <h2 class="news__title">À la une</h2>
+        <section class="news featured" itemscope itemtype="https://schema.org/ItemList">
+            <h2 class="news__title" itemprop="name">À la une</h2>
             <div class="news__grid featured-news">
                 <?php
                 $featured_news = new WP_Query([
@@ -28,8 +28,8 @@
             </div>
         </section>
 
-        <section class="news all__news">
-            <h2 class="news__title">Toutes les actualités</h2>
+        <section class="news all__news" itemscope itemtype="https://schema.org/ItemList">
+            <h2 class="news__title" itemprop="name">Toutes les actualités</h2>
             <div class="news__grid all__news">
                 <?php
                 $all_news = new WP_Query([
