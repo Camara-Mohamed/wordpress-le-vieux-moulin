@@ -10,7 +10,7 @@
                     ?>
                     <article class="house__card">
                         <a href="<?= $link; ?>" class="house__card--link"
-                           title="Voir la maison <?= get_sub_field('custom_description'); ?>">
+                           title="Voir la maison : <?= get_sub_field('custom_title'); ?>">
                             <?php if ($image = get_sub_field('custom_image') ?: get_post_thumbnail_id($page_id)) : ?>
                                 <div class="house__card--image">
                                     <?= wp_get_attachment_image($image, 'medium'); ?>

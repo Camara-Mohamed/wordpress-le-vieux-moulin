@@ -6,7 +6,7 @@ get_header();
 ?>
 
     <main id="main-content" class="main-content">
-        <?php get_template_part('templates/partials/section-hero'); ?>
+        <?php get_template_part('templates/partials/hero-section'); ?>
 
         <section class="legals">
             <div class="legals__container">
