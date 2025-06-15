@@ -43,8 +43,8 @@
     <script src="/wp-content/themes/levieuxmoulin/resources/js/main.js" defer type="module"></script>
 
 </head>
-<body>
-<h1 class="sro" role="heading" aria-level="1"><?= get_the_title(); ?></h1>
+<body itemscope itemtype="https://schema.org/WebPage">
+<h1 class="sro"><?= get_the_title(); ?></h1>
 
 <noscript>
     <p class="no-js__message">
@@ -55,11 +55,11 @@
 
 <a class="skip__link" href="#main-content">Aller au contenu principal</a>
 
-<header class="header">
+<header class="header" itemscope itemtype="https://schema.org/WPHeader">
 
     <!-- Pre-navigation -->
     <div class="header__before">
-        <h2 class="sro" aria-level="2">Navigation secondaire</h2>
+        <h2 class="sro">Navigation secondaire</h2>
 
         <div class="header__before--contact">
             <a href="mailto:<?= get_field('contact_email', 'option'); ?>"
@@ -74,15 +74,16 @@
     </div>
 
     <!-- Navigation principale -->
-    <nav class="header__nav">
+    <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <h2 class="sro" aria-level="2">Navigation principale</h2>
 
-        <a class="header__nav--title" href="<?= home_url('/'); ?>" itemprop="url"
+        <a class="header__nav--title" itemprop="url" href="<?= home_url('/'); ?>" itemprop="url"
            title="Aller à la page d'accueil"><?= get_bloginfo('name') ?>
         </a>
 
         <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>
-        <label for="burger-menu" class="header__nav--burger">
+        <label for="burger-menu" class="header__nav--burger" aria-expanded="false">
+            <span class="sro">Burger Menu</span>
             <svg class="burger-icon" viewBox="0 0 448 512" width="35" height="35">
                 <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
             </svg>
@@ -93,15 +94,16 @@
 
         <ul class="header__nav--container">
             <?php foreach (levm_get_navigation_links('header') as $link): ?>
-                <li class="nav__item<?= $link->current ? ' nav__item--current' : '' ?>">
-                    <a href="<?= $link->href ?>" class="nav__item--link" title="Aller à la page : <?= $link->label ?>">
+                <li itemprop="name" class="nav__item<?= $link->current ? ' nav__item--current' : '' ?>">
+                    <a href="<?= $link->href ?>" class="nav__item--link" title="Aller à la page : <?= $link->label ?>" itemprop="url">
                         <?= $link->label ?>
                     </a>
                     <?php if (!empty($link->children)): ?>
                         <ul class="nav__submenu">
                             <?php foreach ($link->children as $child): ?>
-                                <li class="nav__subitem<?= $child->current ? ' nav__subitem--current' : '' ?>">
-                                    <a href="<?= $child->href ?>" class="nav__subitem--link" title="Aller à la page : <?= $child->label ?>">
+                                <li itemprop="name" class="nav__subitem<?= $child->current ? ' nav__subitem--current' : '' ?>">
+                                    <a href="<?= $child->href ?>" itemprop="url" class="nav__subitem--link" title="Aller à la page
+                                    : <?= $child->label ?>">
                                         <?= $child->label ?>
                                     </a>
                                 </li>
