@@ -1,6 +1,8 @@
 @use '../../base/breakpoints';
 
 .features, .team {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -58,6 +60,8 @@
 
 .team__container {
   background: var(--c-white);
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -1,6 +1,8 @@
 @use '../../base/breakpoints';
 
 .news__content, .gallery {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -13,6 +15,8 @@
 }
 
 .news__content--grid {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;

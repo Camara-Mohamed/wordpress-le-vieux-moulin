@@ -6,12 +6,16 @@
   &__before {
     background-color: var(--c-beige);
     width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem 0;
     color: var(--c-white);
 
     &--contact {
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       gap: 0.75rem;
       font-family: var(--ff-secondary), sans-serif;
@@ -28,6 +32,8 @@
   }
 
   &__nav {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +42,8 @@
     font-family: var(--ff-secondary), sans-serif;
 
     &--title {
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -54,6 +62,8 @@
     }
 
     &--container {
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       gap: 2rem;
 

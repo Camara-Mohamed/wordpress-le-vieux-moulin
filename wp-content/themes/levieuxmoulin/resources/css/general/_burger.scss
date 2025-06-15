@@ -5,6 +5,8 @@
   z-index: 1000;
 
   &__nav--container {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     gap: 2rem;
   }
@@ -71,6 +73,8 @@
 
     .nav__item {
       width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -87,6 +91,8 @@
       }
 
       .nav__submenu {
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         background: none;

@@ -3,6 +3,8 @@
 .legals {
 
   &__content {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -13,6 +15,8 @@
     }
 
     .legals__section{
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       flex-direction: column;
       width: 100%;
