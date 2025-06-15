@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: Single Actualité
+ */
+?>
+
 <?php get_header() ?>
 
     <main id="main-content" class="main__content">
@@ -13,7 +19,7 @@
         </section>
 
         <section class="news__content">
-            <h2 class="news__content--title"><?php _e('Détails', 'levm'); ?></h2>
+            <h2 class="news__content--title">Détails</h2>
             <div class="news__content--content">
                 <?php the_content(); ?>
             </div>
@@ -26,7 +32,7 @@
 
         <?php if (get_field('gallery')) : ?>
             <section class="gallery">
-                <h2 class="gallery__title"><?php _e('Galerie', 'levm'); ?></h2>
+                <h2 class="gallery__title">Galerie</h2>
                 <div class="gallery__grid">
                     <?php
                     $images = get_field('gallery');

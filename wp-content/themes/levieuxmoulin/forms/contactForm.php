@@ -2,7 +2,7 @@
 
 use JetBrains\PhpStorm\NoReturn;
 
-#[NoReturn] function dw_handle_contact_form(): void
+#[NoReturn] function levm_handle_contact_form(): void
 {
     // Initialiser les données de session
     $_SESSION['contact_form_old'] = $_POST;
@@ -12,26 +12,26 @@ use JetBrains\PhpStorm\NoReturn;
     $errors = [];
 
     if (empty($_POST['fullname'])) {
-        $errors['fullname'] = __('Veuillez entrer votre nom complet ou société', 'levm');
+        $errors['fullname'] = 'Veuillez entrer votre nom complet ou société';
     }
 
     if (empty($_POST['email'])) {
-        $errors['email'] = __('Veuillez entrer votre email', 'levm');
+        $errors['email'] = 'Veuillez entrer votre email';
     } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = __('Adresse email invalide', 'levm');
+        $errors['email'] = 'Adresse email invalide';
     }
 
     if (!empty($_POST['phone']) && !preg_match('/^[\d\s\+\-\(\)]{10,}$/', $_POST['phone'])) {
-        $errors['phone'] = __('Numéro de téléphone invalide', 'levm');
+        $errors['phone'] = 'Numéro de téléphone invalide';
     }
 
     $allowed_subjects = ['Don', 'Bénévolat', 'Partenariat', 'Famille d\'accueil', 'Autre'];
     if (empty($_POST['subject']) || !in_array($_POST['subject'], $allowed_subjects)) {
-        $errors['subject'] = __('Veuillez sélectionner un sujet valide', 'levm');
+        $errors['subject'] = 'Veuillez sélectionner un sujet valide';
     }
 
     if (empty($_POST['message'])) {
-        $errors['message'] = __('Veuillez entrer votre message', 'levm');
+        $errors['message'] = 'Veuillez entrer votre message';
     }
 
     // Si erreurs, rediriger avec les messages
@@ -59,11 +59,10 @@ use JetBrains\PhpStorm\NoReturn;
     // Envoi d'email
     $to = 'camara.mohmd@gmail.com';
     $email_subject = sprintf(
-        __('Nouveau message de contact: %s', 'levm'),
+        'Nouveau message de contact: %s',
         $subject
     );
-    $email_message = sprintf(
-        __("Nom: %s\nEmail: %s\nTéléphone: %s\nSujet: %s\n\nMessage:\n%s", 'levm'),
+    $email_message = sprintf("Nom: %s\nEmail: %s\nTéléphone: %s\nSujet: %s\n\nMessage:\n%s",
         $fullname,
         $email,
         $phone,
@@ -74,7 +73,7 @@ use JetBrains\PhpStorm\NoReturn;
     wp_mail($to, $email_subject, $email_message);
 
     // Message de succès
-    $_SESSION['contact_form_success'] = __('Merci pour votre message ! Nous vous répondrons dès que possible.', 'levm');
+    $_SESSION['contact_form_success'] = 'Merci pour votre message ! Nous vous répondrons dès que possible.';
     unset($_SESSION['contact_form_old']);
     unset($_SESSION['contact_form_errors']);
 

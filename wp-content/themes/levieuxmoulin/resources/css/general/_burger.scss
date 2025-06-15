@@ -15,25 +15,8 @@
   }
 }
 
+/* Burger Menu */
 @include breakpoints.burger {
-  .header__nav--container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--c-beige);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10rem 2rem;
-    transition: all .3s ease;
-    transform: translate(100%);
-    z-index: 1000;
-    color: var(--c-white);
-    gap: 2rem;
-  }
-
   .header__nav--burger {
     display: block;
     cursor: pointer;
@@ -58,19 +41,81 @@
       opacity: 0;
     }
   }
+
+  .header__nav--container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--c-beige);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10rem 2rem;
+    transition: all .3s ease;
+    transform: translateX(100%);
+    z-index: 1000;
+    color: var(--c-white);
+    gap: 2rem;
+
+    .nav__submenu {
+      position: static;
+      border: none;
+      padding: 0;
+
+      .nav__subitem--link {
+        padding: 0.5rem 0;
+      }
+    }
+
+    .nav__item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .nav__item--link {
+        font-size: 1.25rem;
+        color: var(--c-white);
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .nav__submenu {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        gap: 0.5rem;
+
+        a.nav__subitem--link {
+          font-size: 1rem;
+
+          &:hover,
+          &:focus {
+            color: var(--c-blue-dark);
+          }
+        }
+      }
+    }
+  }
 }
 
-/* Menu Ouvert */
+/* Menu ouvert */
+.burger-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
 .burger-checkbox:checked ~ .header__nav--container {
   transform: translateX(0);
 }
 
 .burger-checkbox:checked ~ .header__nav--burger {
-  svg {
-    stroke: var(--c-white);
-    color: var(--c-white);
-  }
-
   .burger-icon {
     opacity: 0;
   }
@@ -78,13 +123,10 @@
   .close-icon {
     opacity: 1;
   }
-}
 
-/* Checkbox */
-.burger-checkbox {
-  overflow-y: hidden;
-  position: absolute;
-  opacity: 0;
+  svg {
+    color: var(--c-white);
+  }
 }
 
 body:has(#burger-menu:checked) {

@@ -117,15 +117,15 @@ header .header__before, header .header__nav {
   max-width: 1920px;
 
   @include breakpoints.mobile {
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
 
   @include breakpoints.tablet {
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
   }
 
   @include breakpoints.desktop {
-    padding: 0.5rem 8.5rem;
+    padding: 1rem 8.5rem;
   }
 }
 

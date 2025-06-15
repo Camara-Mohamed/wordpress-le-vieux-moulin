@@ -1,9 +1,7 @@
 @use '../base/breakpoints';
 
 .header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  position: relative;
 
   &__before {
     background-color: var(--c-beige);
@@ -13,7 +11,7 @@
     padding: 0.5rem 0;
     color: var(--c-white);
 
-    .header__languages {
+    &--contact {
       display: flex;
       gap: 0.75rem;
       font-family: var(--ff-secondary), sans-serif;
@@ -23,6 +21,7 @@
         &:hover,
         &:focus {
           text-decoration: underline;
+          color: var(--c-blue-light);
         }
       }
     }
@@ -60,6 +59,7 @@
 
       .nav__item {
         list-style: none;
+        position: relative;
 
         .nav__item--link {
           font-size: 1rem;
@@ -100,36 +100,62 @@
           transform: scaleX(1);
         }
       }
-
-      .nav__submenu {
-        position: absolute;
-        background-color: var(--c-white);
-        top: 100%;
-        left: 0;
-        display: none;
-        padding: 0.5rem 1rem;
-        width: 100%;
-        border: 0.0625rem solid var(--c-beige);
-
-        .nav__subitem {
-          &--link {
-            color: var(--c-brown);
-            text-decoration: none;
-            display: block;
-            padding: 0.25rem 0;
-
-            &:hover,
-            &:focus {
-              color: var(--c-blue-dark);
-            }
-          }
-
-          &--current .nav__subitem--link {
-            font-weight: 600;
-            color: var(--c-blue-dark);
-          }
-        }
-      }
     }
   }
+}
+
+.nav__item:last-child .nav__item--link {
+  background-color: var(--c-yellow);
+  color: var(--c-brown);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-left: 1rem;
+
+  &:after {
+    display: none;
+  }
+
+  @include breakpoints.mobile {
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--c-blue-dark);
+    color: var(--c-white);
+  }
+}
+
+.nav__submenu {
+  position: absolute;
+  background-color: var(--c-white);
+  border: 0.0625rem solid var(--c-beige);
+  top: 100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  display: none;
+  width: max-content;
+
+  &--link {
+    color: var(--c-brown);
+    display: block;
+    padding: 0.25rem 0;
+
+    &:hover,
+    &:focus {
+      color: var(--c-blue-dark);
+    }
+  }
+
+  &--current .nav__subitem--link {
+    font-weight: 600;
+    color: var(--c-blue-dark);
+  }
+}
+
+.nav__item:hover > .nav__submenu,
+.nav__item:focus > .nav__submenu {
+  display: block;
 }

@@ -1,0 +1,140 @@
+@use '../../base/breakpoints';
+
+.history, .numbers, .cta, .faq {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.history__title, .numbers__title, .faq__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.history {
+  &__container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+
+    @include breakpoints.mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__video {
+    flex: 1;
+    min-width: 50%;
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__content {
+    h3 {
+      font-size: 1.5rem;
+      color: var(--c-blue-mid);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.numbers {
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  }
+
+  &__card {
+    background: var(--c-white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-0.125rem);
+    }
+
+    img {
+      width: 100%;
+      max-width: 4rem;
+      height: 100%;
+      object-fit: contain;
+      margin: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: var(--c-blue-mid);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.cta {
+  display: flex;
+  gap: 2rem;
+
+  @include breakpoints.mobile {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 2 / 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h2 {
+      font-size: 2rem;
+      color: var(--c-blue-dark);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    text-decoration: underline;
+    margin-top: 1rem;
+  }
+}
+
+.faq {
+  &__container {
+    .faq__item {
+      background: var(--c-white);
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+
+      summary {
+        padding: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .faq__answer {
+        padding: 0 1.5rem 1.5rem;
+      }
+    }
+  }
+}

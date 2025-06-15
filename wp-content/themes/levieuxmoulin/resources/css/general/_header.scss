@@ -1,1 +1,7 @@
 @use '../base/breakpoints';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
