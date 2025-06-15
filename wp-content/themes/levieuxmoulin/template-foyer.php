@@ -21,7 +21,7 @@
                             <ul class="foyer__list">
                                 <?php while (have_rows('subjects')) : the_row(); ?>
                                     <li class="foyer__list--item">
-                                        <a class="foyer__link">
+                                        <a class="foyer__link" href="<?= '#'.get_sub_field('href'); ?>" title="Aller à la section : <?= get_sub_field('title'); ?>">
                                             <?= get_sub_field('title'); ?>
                                         </a>
                                     </li>
@@ -31,7 +31,7 @@
 
                         <div class="foyer__content">
                             <?php while (have_rows('subjects')) : the_row(); ?>
-                                <article class="foyer__details">
+                                <article class="foyer__details" id="<?= get_sub_field('href'); ?>">
                                     <h3><?= get_sub_field('title'); ?></h3>
                                     <div class="foyer__content">
                                         <?= get_sub_field('content'); ?>

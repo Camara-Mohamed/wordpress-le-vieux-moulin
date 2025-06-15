@@ -9,26 +9,28 @@
                     $link = get_permalink($page_id);
                     ?>
                     <article class="house__card">
-                    <a href="<?= $link; ?>" class="house__card--link">
-                    <?php if ($image = get_sub_field('custom_image') ?: get_post_thumbnail_id($page_id)) ?>
-                    <div class="house__card--image">
-                <?= wp_get_attachment_image($image, 'medium'); ?>
-                    </div>
+                        <a href="<?= $link; ?>" class="house__card--link"
+                           title="Voir la maison <?= get_sub_field('custom_description'); ?>">
+                            <?php if ($image = get_sub_field('custom_image') ?: get_post_thumbnail_id($page_id)) : ?>
+                                <div class="house__card--image">
+                                    <?= wp_get_attachment_image($image, 'medium'); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="card--content">
+                                <?php if ($title = get_sub_field('custom_title')) : ?>
+                                    <h3 class="title"><?= $title; ?></h3>
+                                <?php endif; ?>
+
+                                <?php if ($description = get_sub_field('custom_description') ?: get_the_excerpt($page_id)) : ?>
+                                    <div class="description">
+                                        <?= $description; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </a>
+                    </article>
                 <?php endif; ?>
-
-                <div class="card--content">
-                    <?php if ($title = get_sub_field('custom_title') ?: get_the_title($page_id)) : ?>
-                        <h3 class="title"><?= $title; ?></h3>
-                    <?php endif; ?>
-
-                    <?php if ($description = get_sub_field('custom_description') ?: get_the_excerpt($page_id)) : ?>
-                        <div class="description">
-                            <?= $description; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                </a>
-                </article>
             <?php endwhile; ?>
         </div>
     </section>

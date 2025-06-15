@@ -7,7 +7,7 @@
 
         <?php if (have_rows('history_section')): ?>
             <section class="history">
-                <h2 class="history__title"><?=  get_field('history_section_title'); ?></h2>
+                <h2 class="history__title"><?= get_field('history_section_title'); ?></h2>
                 <?php while(have_rows('history_section_items')): the_row(); ?>
                     <div class="history__container">
                         <?php if($video = get_sub_field('video')): ?>
@@ -28,7 +28,7 @@
 
         <?php if (have_rows('numbers_section')): ?>
             <section class="numbers">
-                <h2 class="numbers__title"><?=  get_field('numbers_section_title'); ?></h2>
+                <h2 class="numbers__title"><?= get_field('numbers_section_title'); ?></h2>
                 <div class="numbers__grid">
                     <?php while(have_rows('numbers_section_cards')): the_row(); ?>
                         <div class="number__card">
@@ -39,35 +39,6 @@
                             <p><?= get_sub_field('text'); ?></p>
                         </div>
                     <?php endwhile; ?>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <?php if (have_rows('cta_section')): ?>
-            <section class="cta">
-                <?php if($image = get_sub_field('image')): ?>
-                    <?= wp_get_attachment_image($image, 'full'); ?>
-                <?php endif; ?>
-                <div class="cta__content">
-                    <h2><?= get_sub_field('title'); ?></h2>
-                    <?php if(have_rows('content')): the_row(); ?>
-                        <div class="cta__text">
-                            <h3><?= get_sub_field('title'); ?></h3>
-                            <p><?= get_sub_field('text'); ?></p>
-                        </div>
-                        <div class="cta__buttons">
-                            <?php while(have_rows('buttons')): the_row(); ?>
-                                <a href="<?= get_sub_field('url'); ?>" class="button">
-                                    <?= get_sub_field('text'); ?>
-                                </a>
-                            <?php endwhile; ?>
-                        </div>
-                        <?php if($link = get_sub_field('link')): ?>
-                            <a href="<?= $link['url']; ?>" class="cta__link">
-                                <?= $link['title']; ?>
-                            </a>
-                        <?php endif; ?>
-                    <?php endif; ?>
                 </div>
             </section>
         <?php endif; ?>

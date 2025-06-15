@@ -1,25 +1,28 @@
 <footer class="footer">
-    <h2 class="sro" aria-level="2"><?php _e('Navigation de pied de page', 'levm'); ?></h2>
+    <h2 class="sro" aria-level="2">Navigation de pied de page</h2>
 
     <div class="footer__container">
         <section class="footer__section">
-            <h3 class="footer__title"><?php __('Le vieux moulin', 'levm'); ?></h3>
+            <h3 class="footer__title sro">Le vieux moulin</h3>
             <div class="footer__contact">
-                <p>
+                <a class="footer__contact--title" href="<?= home_url('/'); ?>" itemprop="url"
+                   title="Aller à la page d'accueil"><?= get_bloginfo('name') ?>
+                </a>
+                <div>
                     <a href="mailto:<?= get_field('contact_email', 'option'); ?>"
-                       title="<?php _e('Envoyer un email', 'levm'); ?>">
+                       title="Envoyer un email">
                         <?= get_field('contact_email', 'option'); ?>
                     </a>
                     <a href="tel:<?= get_field('contact_phone', 'option'); ?>"
-                       title="<?php _e('Appeler le numéro', 'levm'); ?>">
+                       title="Appeler le numéro">
                         <?= get_field('contact_phone', 'option'); ?>
                     </a>
-                </p>
+                </div>
             </div>
         </section>
 
-        <nav class="footer__section">
-            <h3 class="footer__title sro"><?php _e('Navigation de bas de page', 'levm'); ?></h3>
+        <nav class="footer__nav">
+            <h3 class="footer__title sro">Navigation de bas de page</h3>
             <?php
             wp_nav_menu([
                 'theme_location' => 'footer',
@@ -30,8 +33,8 @@
             ?>
         </nav>
 
-        <aside class="footer__section">
-            <h3 class="footer__title sro"><?php _e('Partenaires', 'levm'); ?></h3>
+        <aside class="footer__aside">
+            <h3 class="footer__title sro">Partenaires</h3>
             <div class="footer__partners">
                 <?php if (have_rows('partners', 'option')): ?>
                     <?php while (have_rows('partners', 'option')): the_row(); ?>
@@ -54,11 +57,11 @@
     </div>
 
     <article class="footer__copyright">
-        <h3 class="sro"><?php _e('Mentions légales', 'levm'); ?></h3>
-        <p><?php echo __('Copyright © Le Vieux Moulin. Tous droits réservés.', 'levm'); ?></p>
-        <a href="<?php home_url(__('/mentions-legales', 'levm')); ?>"
-           title="<?php _e('Voir les mentions légales', 'levm'); ?>">
-            <?php _e(' Mentions légales', 'levm'); ?>
+        <h3 class="sro">Mentions légales</h3>
+        <p>Copyright © Le Vieux Moulin. Tous droits réservés.</p>
+        <a href="<?php echo home_url('mentions-legales'); ?>"
+           title="Voir les mentions légales">
+            Mentions légales
         </a>
     </article>
 </footer>

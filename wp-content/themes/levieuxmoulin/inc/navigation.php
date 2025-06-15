@@ -2,8 +2,8 @@
 
 // Enregistrement des menus
 register_nav_menus([
-    'header' => __('Menu principal', 'levm'),
-    'footer' => __('Menu de pied de page', 'levm'),
+    'header' => 'Menu principal',
+    'footer' => 'Menu de pied de page',
 ]);
 
 function levm_get_navigation_links(string $location): array

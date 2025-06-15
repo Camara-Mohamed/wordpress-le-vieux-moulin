@@ -10,7 +10,7 @@
         <?php get_template_part('templates/partials/hero-section') ?>
 
         <section class="news featured">
-            <h2 class="news__title"><?php _e('À la une', 'levm'); ?></h2>
+            <h2 class="news__title">À la une</h2>
             <div class="news__grid featured-news">
                 <?php
                 $featured_news = new WP_Query([
@@ -29,7 +29,7 @@
         </section>
 
         <section class="news all__news">
-            <h2 class="news__title"><?php _e('Toutes les actualités', 'levm'); ?></h2>
+            <h2 class="news__title">Toutes les actualités</h2>
             <div class="news__grid all__news">
                 <?php
                 $all_news = new WP_Query([

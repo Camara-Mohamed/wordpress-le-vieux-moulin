@@ -2,8 +2,8 @@
 
 register_post_type('news', [
     'labels' => [
-        'name' => __('Actualités', 'levm'),
-        'singular_name' => __('Actualité', 'levm'),
+        'name' => 'Actualités',
+        'singular_name' => 'Actualité',
     ],
     'public' => true,
     'has_archive' => true,

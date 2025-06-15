@@ -7,16 +7,14 @@
 
     <!-- Meta de base -->
     <meta name="author" content="Le vieux moulin - Camara Mohamed">
-    <meta name="keywords"
-          content="<?= __('Mohamed Camara, le vieux moulin, accueil, foyer, jeunes, mineurs, dons, actualités, aide à la jeunesse, jeune en difficulté',
-              'levm') ?>">
+    <meta name="keywords" content="Mohamed Camara, le vieux moulin, accueil, foyer, jeunes, mineurs, dons, actualités, aide à la jeunesse, jeune en difficulté">
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
     <!-- Title -->
     <title>
         <?php
         if (is_front_page()) {
-            echo _e('Accueil', 'le-vm').' -  '.get_bloginfo('name');
+            echo 'Accueil - '.get_bloginfo('name');
         } else {
             echo wp_title('', false).' - '.get_bloginfo('name');
         }
@@ -26,7 +24,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="<?php
     if (is_front_page()) {
-        echo _e('Accueil', 'levm').' - '.get_bloginfo('name');
+        echo 'Accueil - '.get_bloginfo('name');
     } else {
         echo wp_title('', false).' - '.get_bloginfo('name');
     }
@@ -34,8 +32,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= home_url(); ?>">
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
-    <meta property="og:image"
-          content="<?= get_template_directory_uri().'/resources/svg/logo-simple.svg'; ?>">
+    <meta property="og:image" content="<?= get_template_directory_uri().'/resources/svg/logo-simple.svg'; ?>">
 
     <?php wp_head(); ?>
     <!-- FancyBox : Pour que chaque image soit cliquable et qu'on puisse la voir en grand -->
@@ -51,46 +48,37 @@
 
 <noscript>
     <p class="no-js__message">
-        <?php _e('Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.',
-            'levm') ?> <br>
-        <?php _e('Voici les', 'levm') ?> <a href="https://www.enable-javascript.com/"
-                                            title="<?= __
-                                            ('vers le site enable-javascript',
-                                                'levm') ?>"><?php _e('instructions pour activer JavaScript dans votre navigateur Web') ?></a>.
+        Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript. <br>
+        Voici les <a href="https://www.enable-javascript.com/" title="vers le site enable-javascript">instructions pour activer JavaScript dans votre navigateur Web</a>.
     </p>
 </noscript>
 
-<a class="skip__link" href="#main-content"><?php _e('Aller au contenu principal', 'levm') ?></a>
+<a class="skip__link" href="#main-content">Aller au contenu principal</a>
 
 <header class="header">
-    
+
     <!-- Pre-navigation -->
     <div class="header__before">
-        <h2 class="sro" aria-level="2"><?php _e('Navigation secondaire',
-                'levm'); ?></h2>
+        <h2 class="sro" aria-level="2">Navigation secondaire</h2>
 
-        <div class="header__languages">
-            <?php
-            if (function_exists('pll_the_languages')) {
-                $languages = pll_the_languages(array('raw' => 1, 'echo' => 0));
-                if ($languages) {
-                    foreach ((array) $languages as $lang) {
-                        echo '<a href="'.$lang['url'].'" class="'.(!empty($lang['current']) ? 'active' : '').'">'.strtoupper($lang['slug']).'</a>';
-                    }
-                }
-            }
-            ?>
+        <div class="header__before--contact">
+            <a href="mailto:<?= get_field('contact_email', 'option'); ?>"
+               title="Envoyer un email">
+                <?= get_field('contact_email', 'option'); ?>
+            </a>
+            <a href="tel:<?= get_field('contact_phone', 'option'); ?>"
+               title="Appeler le numéro">
+                <?= get_field('contact_phone', 'option'); ?>
+            </a>
         </div>
     </div>
 
     <!-- Navigation principale -->
     <nav class="header__nav">
-        <h2 class="sro" aria-level="2"><?php _e('Navigation principale',
-                'levm'); ?></h2>
+        <h2 class="sro" aria-level="2">Navigation principale</h2>
 
         <a class="header__nav--title" href="<?= home_url('/'); ?>" itemprop="url"
-           title="<?php _e('Aller à la page d\'accueil', 'levm');
-           ?>"><?= get_bloginfo('name') ?>
+           title="Aller à la page d'accueil"><?= get_bloginfo('name') ?>
         </a>
 
         <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>

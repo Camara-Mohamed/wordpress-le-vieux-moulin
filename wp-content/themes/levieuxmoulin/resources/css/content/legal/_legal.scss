@@ -1,0 +1,44 @@
+@use '../../base/breakpoints';
+
+.legals {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+
+    @include breakpoints.mobile {
+      width: 100%;
+    }
+
+    &--paragraph {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+
+      .legals__paragraph--title {
+        font-family: var(--ff-secondary), sans-serif;
+        font-size: 2rem;
+      }
+
+      .legals__paragraph--content {
+        font-size: 1.25rem;
+
+        strong {
+          font-weight: 600;
+        }
+
+        a {
+          text-decoration: underline;
+
+          &:hover,
+          &:focus {
+            color: var(--c-blue-light);
+          }
+        }
+      }
+    }
+  }
+}

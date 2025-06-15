@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: Single Maison
+ */
+?>
+
 <?php get_header() ?>
 
     <main id="main-content" class="main__content">
@@ -5,7 +11,7 @@
 
         <?php if (have_rows('features_section')): ?>
             <section class="features">
-                <h2 class="features__title"><?= get_sub_field('title') ?: get_field('features_section_title'); ?></h2>
+                <h2 class="features__title"><?= get_field('features_section_title'); ?></h2>
                 <div class="features__grid">
                     <?php while(have_rows('features_section_items')): the_row(); ?>
                         <div class="feature__item">
@@ -19,7 +25,7 @@
 
         <?php if (have_rows('team_section')): ?>
             <section class="team">
-                <h2 class="team__title"><?= get_sub_field('title') ?: get_field('team_section_title'); ?></h2>
+                <h2 class="team__title"><?= get_field('team_section_title'); ?></h2>
                 <?php while(have_rows('team_section_subsections')): the_row(); ?>
                     <div class="team__container">
                         <h3><?= get_sub_field('title'); ?></h3>
@@ -38,6 +44,8 @@
                 <?php endwhile; ?>
             </section>
         <?php endif; ?>
+
+        <?php get_template_part('templates/partials/card-houses') ?>
     </main>
 
 <?php get_footer() ?>
