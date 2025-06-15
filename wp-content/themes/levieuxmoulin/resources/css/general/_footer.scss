@@ -2,6 +2,10 @@
 
 .footer {
   color: var(--c-brown);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 
@@ -17,6 +21,10 @@
   }
 
   .footer__section {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -24,6 +32,10 @@
   }
 
   .footer__nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -31,6 +43,10 @@
   }
 
   .footer__aside {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -38,11 +54,15 @@
   }
 
   .footer__contact {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 
     &--title {
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -76,6 +96,8 @@
   }
 
   .footer__partners {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -95,6 +117,8 @@
 
   nav {
     ul {
+      display: -webkit-box;
+      display: -webkit-flex;
       display: flex;
       gap: 1rem;
       list-style: none;
@@ -118,6 +142,8 @@
 
   .footer__copyright {
     color: var(--c-white);
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

@@ -6,11 +6,15 @@
 }
 
 .donations {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   gap: 6rem;
 
   .donation {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -63,6 +67,8 @@
 
 .realisation {
   margin-top: 4rem;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   gap: 2rem;

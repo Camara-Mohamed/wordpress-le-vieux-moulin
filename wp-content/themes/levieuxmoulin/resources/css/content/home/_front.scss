@@ -1,6 +1,8 @@
 @use '../../base/breakpoints';
 
 .history, .numbers, .cta, .faq {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -14,6 +16,8 @@
 
 .history {
   &__container {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     gap: 3rem;
     align-items: center;
@@ -80,6 +84,8 @@
 }
 
 .cta {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   gap: 2rem;
 
@@ -95,6 +101,8 @@
   }
 
   &__content {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -106,6 +114,8 @@
   }
 
   &__buttons {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
