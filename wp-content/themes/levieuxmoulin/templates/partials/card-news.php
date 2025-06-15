@@ -1,5 +1,5 @@
 <article class="news__card">
-    <a href="<?php the_permalink(); ?>" class="news__card--link">
+    <a href="<?php the_permalink(); ?>" class="news__card--link" title="Voir l'actualité : <?php the_title(); ?>">
         <?php if (has_post_thumbnail()) : ?>
             <div class="news__card--image">
                 <?php the_post_thumbnail('medium'); ?>

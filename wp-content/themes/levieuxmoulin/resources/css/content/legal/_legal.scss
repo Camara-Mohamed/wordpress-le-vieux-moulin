@@ -12,20 +12,18 @@
       width: 100%;
     }
 
-    &--paragraph {
+    .legals__section{
       display: flex;
       flex-direction: column;
       width: 100%;
       gap: 1rem;
 
-      .legals__paragraph--title {
-        font-family: var(--ff-secondary), sans-serif;
+      .legals__title {
         font-size: 2rem;
+        font-weight: 600;
       }
 
-      .legals__paragraph--content {
-        font-size: 1.25rem;
-
+      .legals__content {
         strong {
           font-weight: 600;
         }

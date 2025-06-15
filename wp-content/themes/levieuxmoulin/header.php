@@ -94,14 +94,14 @@
         <ul class="header__nav--container">
             <?php foreach (levm_get_navigation_links('header') as $link): ?>
                 <li class="nav__item<?= $link->current ? ' nav__item--current' : '' ?>">
-                    <a href="<?= $link->href ?>" class="nav__item--link">
+                    <a href="<?= $link->href ?>" class="nav__item--link" title="Aller à la page : <?= $link->label ?>">
                         <?= $link->label ?>
                     </a>
                     <?php if (!empty($link->children)): ?>
                         <ul class="nav__submenu">
                             <?php foreach ($link->children as $child): ?>
                                 <li class="nav__subitem<?= $child->current ? ' nav__subitem--current' : '' ?>">
-                                    <a href="<?= $child->href ?>" class="nav__subitem--link">
+                                    <a href="<?= $child->href ?>" class="nav__subitem--link" title="Aller à la page : <?= $child->label ?>">
                                         <?= $child->label ?>
                                     </a>
                                 </li>
