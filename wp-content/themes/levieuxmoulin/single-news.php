@@ -1,9 +1,3 @@
-<?php
-/**
- * Template Name: Single Actualité
- */
-?>
-
 <?php get_header() ?>
 
     <main id="main-content" class="main__content">
@@ -16,18 +10,6 @@
             <div class="news__hero--image">
                 <?php the_post_thumbnail('large'); ?>
             </div>
-        </section>
-
-        <section class="news__content">
-            <h2 class="news__content--title">Détails</h2>
-            <div class="news__content--content">
-                <?php the_content(); ?>
-            </div>
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="news__content--image">
-                    <?php the_post_thumbnail('large'); ?>
-                </div>
-            <?php endif; ?>
         </section>
 
         <?php if (get_field('gallery')) : ?>
