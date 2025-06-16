@@ -1,0 +1,53 @@
+{
+  "wp-content/themes/levieuxmoulin/resources/css/styles.scss": {
+    "file": "assets/css-BUdZp7j-.css",
+    "src": "wp-content/themes/levieuxmoulin/resources/css/styles.scss",
+    "isEntry": true
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Bold.ttf": {
+    "file": "assets/PlayfairDisplay-Bold-BnSlw44A.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Bold.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Medium.ttf": {
+    "file": "assets/PlayfairDisplay-Medium-BTlPw0MP.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Medium.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Regular.ttf": {
+    "file": "assets/PlayfairDisplay-Regular-cAkczocX.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-Regular.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-SemiBold.ttf": {
+    "file": "assets/PlayfairDisplay-SemiBold-lpftM5a9.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/PlayfairDisplay-SemiBold.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Bold.ttf": {
+    "file": "assets/Poppins-Bold-qTAUjFF7.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Bold.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Light.ttf": {
+    "file": "assets/Poppins-Light-DT6-CsId.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Light.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Medium.ttf": {
+    "file": "assets/Poppins-Medium-Cxde2ZoM.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Medium.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Regular.ttf": {
+    "file": "assets/Poppins-Regular-CTKNfV9P.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-Regular.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-SemiBold.ttf": {
+    "file": "assets/Poppins-SemiBold-B_fPDAUb.ttf",
+    "src": "wp-content/themes/levieuxmoulin/resources/fonts/Poppins-SemiBold.ttf"
+  },
+  "wp-content/themes/levieuxmoulin/resources/js/main.js": {
+    "file": "assets/js-0ntRQQpC.js",
+    "name": "js",
+    "src": "wp-content/themes/levieuxmoulin/resources/js/main.js",
+    "isEntry": true
+  },
+  "wp-content/themes/levieuxmoulin/resources/svg/logo.svg": {
+    "file": "assets/logo-Cv-1KN86.svg",
+    "src": "wp-content/themes/levieuxmoulin/resources/svg/logo.svg"
+  }
+}

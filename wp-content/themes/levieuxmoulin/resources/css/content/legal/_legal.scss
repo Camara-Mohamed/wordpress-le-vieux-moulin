@@ -1,0 +1,46 @@
+@use '../../base/breakpoints';
+
+.legals {
+
+  &__content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+
+    @include breakpoints.mobile {
+      width: 100%;
+    }
+
+    .legals__section{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+
+      .legals__title {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      .legals__content {
+        strong {
+          font-weight: 600;
+        }
+
+        a {
+          text-decoration: underline;
+
+          &:hover,
+          &:focus {
+            color: var(--c-blue-light);
+          }
+        }
+      }
+    }
+  }
+}

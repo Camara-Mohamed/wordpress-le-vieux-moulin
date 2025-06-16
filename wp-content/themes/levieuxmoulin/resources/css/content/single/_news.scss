@@ -1,0 +1,40 @@
+@use '../../base/breakpoints';
+
+.news__content, .gallery {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.news__content--title, .gallery__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.news__content--grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+
+  @include breakpoints.mobile {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem
+  }
+}

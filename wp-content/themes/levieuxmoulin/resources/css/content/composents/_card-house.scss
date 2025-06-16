@@ -1,0 +1,88 @@
+@use '../../base/breakpoints';
+
+.houses {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    @include breakpoints.mobile {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .house__card {
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoints.desktop {
+      max-width: 400px;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.02);
+      opacity: 0.8;
+    }
+
+    &--link {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--c-white);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 0.5rem 0.75rem;
+      padding: 1rem 2rem;
+    }
+
+    &:nth-child(even) {
+      border-top: 0.5rem solid var(--c-yellow);
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &:nth-child(odd) {
+      border-top: 0.5rem solid var(--c-blue-mid);
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &--image {
+      padding: 1rem;
+      aspect-ratio: 1/1;
+    }
+
+    .card--content {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .title {
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+
+      .description {
+
+      }
+    }
+  }
+}

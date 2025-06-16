@@ -1,0 +1,40 @@
+$mobile: 600px;
+$tablet: 800px;
+$desktop: 1020px;
+
+// Media Queries mixins
+@mixin mobile {
+  @media only screen and (max-width: #{$mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $mobile) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin burger {
+  @media only screen and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+/*
+Lors de l'utilisation
+.element {
+  font-size: 16px;
+
+  // Mobile : Écrans en dessous de 480px
+  @include breakpoints.mobile {
+    font-size: 14px;
+  }
+}
+*/
