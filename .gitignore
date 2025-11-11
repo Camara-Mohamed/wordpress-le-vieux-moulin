@@ -145,3 +145,9 @@ wp-content/themes/*
 !vite.config.js
 !package.json
 !postcss.config.js
+
+
+# Public
+wp-content/themes/levieuxmoulin/public
+wp-content/themes/levieuxmoulin/public/assets
+wp-content/themes/levieuxmoulin/public/.vite
