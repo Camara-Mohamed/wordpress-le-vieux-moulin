@@ -1,151 +1,123 @@
+# Le Vieux Moulin de Strainchamps
 
-**Bonjour, bienvenue sur Le Vieux Moulin de Strainchamps**
+<p align="center">
+  <img src="https://wakatime.com/badge/user/996f0f7d-c952-4cd0-a2d6-e00eb364028d/project/9523de68-7a2a-444f-ab23-9987a37ce9f8.svg" alt="WakaTime">
+  <a href="https://www.figma.com/design/raayJMNMbzkh7y1cyeNOy8/Projet-Client?node-id=15-2&m=dev&t=0on6IZNI9fz27hSh-1" target="_blank">
+    <img src="https://img.shields.io/badge/Figma-Design-F24E1E?logo=figma">
+  </a>
+  <a href="https://le-vieux-moulin.mohamed-camara.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Consulter%20le%20site-En%20ligne-0078D4">
+  </a>
+  <img src="https://img.shields.io/badge/Status-Projet%20académique-green">
+</p>
 
-Ce site est un projet que nous, élèves de 2ème année à la HEPL, avons réalisé dans un double objectif :
+---
 
--   Évaluer nos compétences sur un site réel
-    
--   Proposer un projet utile pour un service venant en aide à des jeunes en difficulté
-    
+## À propos
 
-**Lien vers le site**  : [Mon site](https://le-vieux-moulin.mohamed-camara.com/)
+Ce projet est un site web institutionnel pour une association d'aide à la jeunesse, créé dans le cadre de ma formation à la **HEPL - Techniques Infographiques option Web**.
 
-----------
+L'objectif était de créer une plateforme **informative et rassurante** pour présenter les services de l'association, faciliter le contact avec les parents et enfants, et mettre en avant les projets éducatifs.
 
-### **1. Contexte**
+Ce projet a été réalisé avec un **vrai client** et répond à un cahier des charges précis défini en concertation avec l'équipe.
 
-Ce projet est l'un de ceux que je dois réaliser pour valider ma 2ème année. Le thème nous a été imposé par un vrai client, avec un cahier des charges précis :  
-[Cahier des charges](https://www.notion.so/B2-Q2-Cahier-des-charges-Projet-Client-1a50422630d48008b298eaa3ab543ab2?source=copy_link)
+---
 
-L'objectif : créer une ambiance  **joviale et rassurante**  pour les parents et enfants visiteurs.
+## Objectifs
 
-----------
+- Présenter clairement la mission et le fonctionnement de l'association
+- Créer un espace rassurant et informatif pour les visiteurs
+- Mettre en avant les projets éducatifs et les actualités
+- Faciliter la prise de contact et les démarches de soutien
+- Assurer une accessibilité optimale sur tous les appareils
 
-### **2. Structure**
+---
 
-J'ai commencé par un  **benchmark**  :  
-[Lien Miro](https://miro.com/welcomeonboard/alBxU1BaTnJEdEkycE56VXA4UDJlbG84VERLMVg3cWVFTk5xRXlMbDc0eGE1bDBtZ2ZLSXZ5eFBjMTY1K2ZERGFhMmxZMDBMbHlRUTVETG9FcVNFYjNYc285dVZKSW5OMWlsejc3d3AzL0lzcXZFM1BmWW03N3puNWE2N2d5b1NzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=556845535888)
+## Technologies
 
-**Arborescence finale**  :
+| Technologie | Utilité |
+|-------------|---------|
+| HTML5 | Structuration sémantique du contenu |
+| CSS3 + SASS | Mise en forme (BEM, Variables, Responsive) |
+| JavaScript + TypeScript | Interactivité (Fancybox pour galeries) |
+| WordPress + ACF Pro | Gestion dynamique du contenu |
+| PHP | Logique serveur et traitements |
 
--   Accueil
-    
--   Foyer
-    
--   Nos Maisons
-    
-    -   Edelweiss
-        
-    -   Le Vieux Moulin
-        
--   Nos Actualités
-    
--   Nous contacter
-    
--   Dons
-    
+---
 
-**Contenu et design**  :  
-[Notion](https://www.notion.so/Projet-Client-1ca0422630d48083b9e8d76d228b5369?source=copy_link)  |  [Figma](https://www.figma.com/design/raayJMNMbzkh7y1cyeNOy8/Projet-Client?node-id=67-36&t=vF82FwqEvjiAxqfT-1)
+## Structure du site
 
-----------
+- **Accueil** : Présentation générale et accès rapide aux sections principales
+- **Le Vieux Moulin** : Valeurs éducatives, routines et spécificités
+- **Nos Foyers** : Présentation des deux bâtiments (Edelweiss et Le Vieux Moulin)
+- **Nos Actualités** : Projets, événements et vie quotidienne
+- **Nous Contacter** : Formulaire de contact avec gestion des erreurs
+- **Soutenir** : Moyens de contribuer à la mission de l'association
 
-### **3. Langages utilisés**
+---
 
--   **HTML/CSS**
-    
--   **WordPress**
-    
--   **JavaScript**  (Fancybox)
-    
--   **PHP**
-    
+## Fonctionnalités clés
 
-----------
+- Site dynamique avec WordPress pour la gestion simplifiée du contenu
+- Actualités gérées facilement par l'équipe
+- Formulaire de contact fonctionnel avec validation et gestion d'erreurs
+- Galeries d'images interactives avec Fancybox
+- Design responsive pour PC, tablette et mobile
+- Méthodologie BEM pour l'organisation du CSS
+- Performance optimisée
 
-### **4. Attentes du projet**
+---
 
--   Un  **design propre**  qui montre ce à quoi le client s'attend de ce genre de projet
-    
--   Tous les éléments textuels sont pertinents placées ou peut être accessibles (directement ou via des boîtes dédiées) pour les disposés plutard
-    
+## Installation
 
-**Fonctionnalités clés**  :
+### Prérequis
 
--   Site dynamique avec  **WordPress**
-    
--   Formulaire de contact avec  **gestion des erreurs**
-    
--   Gestion simplifiée des  **actualités**
-    
+- Serveur avec PHP 7.4+
+- WordPress 5.0+
 
-----------
+### Étapes
 
-### **5. Difficultés rencontrées**
+1. Cloner le repository
+   ```bash
+   git clone https://github.com/Camara-Mohamed/wordpress-le-vieux-moulin.git
+   cd le-vieux-moulin
+   ```
 
--   **Démarrage difficile**  : J'ai eu du mal à de commencer le projet du au fait que je n'avais pas de design
-    
--   **Gestion des documents clients**  : J'ai eu du mal à faire le tri et à utilisé les nombreux documents que le client nous à donner
-    
+2. Installer les dépendances frontend
+   ```bash
+   npm install
+   ```
 
-----------
+3. Compiler les fichiers SASS (ouvrir 2 terminaux)
 
-### **6. Axes d'amélioration**
+   Terminal 1 - Compilation automatique
+   ```bash
+   npm run watch
+   ```
 
--   **Accessibilité**  : optimiser les liens (titres, attributs)
-    
--   **Design**  : retravailler certains éléments trop brouillons
-    
--   **Contenu**  : peaufiner les textes pour plus de pertinence
-    
+   Terminal 2 - Serveur de développement
+   ```bash
+   npm run serve
+   ```
 
-----------
+---
 
-### **7. Mise en ligne**
+## Apprentissages
 
-Aucun problème rencontré lors du de la mise en ligne.
+Ce projet m'a permis de :
 
-----------
+- Travailler avec un **client réel** et gérer ses attentes
+- Organiser et prioriser un **cahier des charges** complexe
+- Créer une **arborescence logique** en fonction du contenu
+- Implémenter un site **WordPress professionnel** avec ACF
+- Gérer des **formulaires** avec validation et erreurs
+- Structurer le CSS avec la **méthodologie BEM**
 
-### **8. Objectifs remplis**
+---
 
-Expliquer clairement sa mission et son fonctionnement  
-Créer un espace rassurant et informatif  
-Mettre en avant les projets éducatifs  
-Faciliter la prise de contact
+## Auteur
 
-----------
-
-**Structure finale**
-
-1.  **Accueil**  : Présentation générale + accès rapide
-    
-2.  **Le Vieux Moulin**  : Valeurs éducatives, routines...
-    
-3.  **Foyers**  : Présentation des deux bâtiments
-    
-4.  **Actualités**  : Projets et événements
-    
-5.  **Contact**  : Formulaire et coordonnées
-    
-6.  **Soutien**  : Moyens d’aider l’association
-    
-
-----------
-
-**Technologies**
-
--   **Design responsive**  (PC, tablette, mobile)
-    
--   **WordPress**  +  **ACF Pro**
-    
--   **Sass**  (méthodologie BEM)
-    
--   **TypeScript**
-    
-
-----------
-
-**Auteur**  
-Développé par Mohamed Camara  
-Pour toute question : [Me Contacter](https://mohamed-camara.com/me-contacter/).
+Mohamed Camara
+- Email : [camara.mohmd@gmail.com](mailto:camara.mohmd@gmail.com)
+- Formation : HEPL - Techniques Infographiques option Web
+- Portfolio : [mohamed-camara.com](https://mohamed-camara.com/)
