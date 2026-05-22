@@ -21,7 +21,11 @@
     </div>
     <?php if(get_field('hero_image')): ?>
         <div class="hero__image">
-            <?= wp_get_attachment_image(get_field('hero_image'), 'full'); ?>
+            <?= wp_get_attachment_image(get_field('hero_image'), 'full', false, [
+                'loading'       => 'eager',
+                'fetchpriority' => 'high',
+                'sizes'         => '(max-width: 1019px) 100vw, 50vw',
+            ]); ?>
         </div>
     <?php endif; ?>
 </section>

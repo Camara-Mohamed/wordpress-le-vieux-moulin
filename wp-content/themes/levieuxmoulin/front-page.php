@@ -33,7 +33,10 @@
                     <?php while(have_rows('numbers_section_cards')): the_row(); ?>
                         <div class="number__card">
                             <?php if($image = get_sub_field('image')): ?>
-                                <?= wp_get_attachment_image($image, 'small'); ?>
+                                <?= wp_get_attachment_image($image, 'small', false, [
+                                    'loading' => 'lazy',
+                                    'sizes'   => '64px',
+                                ]); ?>
                             <?php endif; ?>
                             <h3><?= get_sub_field('title'); ?></h3>
                             <p><?= get_sub_field('text'); ?></p>

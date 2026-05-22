@@ -14,7 +14,10 @@
                            title="Voir la maison : <?= get_sub_field('custom_title'); ?>">
                             <?php if ($image = get_sub_field('custom_image') ?: get_post_thumbnail_id($page_id)) : ?>
                                 <div class="house__card--image">
-                                    <?= wp_get_attachment_image($image, 'medium'); ?>
+                                    <?= wp_get_attachment_image($image, 'medium', false, [
+                                        'loading' => 'lazy',
+                                        'sizes'   => '(max-width: 599px) 100vw, (min-width: 1020px) 400px, 50vw',
+                                    ]); ?>
                                 </div>
                             <?php endif; ?>
 

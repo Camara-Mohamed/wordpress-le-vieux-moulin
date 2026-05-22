@@ -8,7 +8,11 @@
                 <p class="news__hero--content"><?php the_excerpt(); ?></p>
             </div>
             <div class="news__hero--image">
-                <?php the_post_thumbnail('large'); ?>
+                <?php the_post_thumbnail('large', [
+                    'loading'       => 'eager',
+                    'fetchpriority' => 'high',
+                    'sizes'         => '(max-width: 1019px) 100vw, 50vw',
+                ]); ?>
             </div>
         </section>
 
@@ -19,11 +23,14 @@
                     <?php
                     $images = get_field('gallery');
                     foreach ($images as $image) : ?>
-                        <a href="<?php echo $image['url']; ?>" title="Voir l'image en plus grand"
-                           data-fancybox="gallery"><img
-                                    src="<?php echo $image['url']; ?>"
-                                                                              alt="<?php
-                            echo $image['alt']; ?>"></a>
+                        <a href="<?php echo esc_url($image['url']); ?>"
+                           title="Voir l'image en plus grand"
+                           data-fancybox="gallery">
+                            <?php echo wp_get_attachment_image($image['ID'], 'medium_large', false, [
+                                'loading' => 'lazy',
+                                'sizes'   => '(max-width: 599px) 100vw, (max-width: 1019px) calc(50vw - 1.5rem), 33vw',
+                            ]); ?>
+                        </a>
                     <?php endforeach; ?>
                 </div>
             </section>

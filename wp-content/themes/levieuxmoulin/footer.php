@@ -44,9 +44,12 @@
                         if ($logo): ?>
                             <a href="<?php echo $url; ?>"
                                target="_blank"
+                               rel="noopener noreferrer"
                                title="<?= get_sub_field('name'); ?>">
                                 <?php echo wp_get_attachment_image($logo, 'medium', false, [
-                                    'alt' => get_sub_field('name')
+                                    'alt'     => get_sub_field('name'),
+                                    'loading' => 'lazy',
+                                    'sizes'   => '(max-width: 599px) 50vw, 200px',
                                 ]); ?>
                             </a>
                         <?php endif; ?>

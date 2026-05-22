@@ -138,7 +138,10 @@
                             <div class="partner__logo">
                                 <?php if (get_sub_field('url')) : ?>
                                     <a href="<?php the_sub_field('url'); ?>">
-                                        <?php echo wp_get_attachment_image(get_sub_field('logo'), 'medium'); ?>
+                                        <?php echo wp_get_attachment_image(get_sub_field('logo'), 'medium', false, [
+                                            'loading' => 'lazy',
+                                            'sizes'   => '(max-width: 599px) 50vw, 200px',
+                                        ]); ?>
                                     </a>
                                 <?php endif; ?>
                             </div>

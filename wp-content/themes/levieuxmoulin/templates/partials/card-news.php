@@ -2,7 +2,10 @@
     <a href="<?php the_permalink(); ?>" itemprop="url" class="news__card--link" title="Voir l'actualité : <?php the_title(); ?>">
         <?php if (has_post_thumbnail()) : ?>
             <div class="news__card--image" itemprop="image">
-                <?php the_post_thumbnail('medium'); ?>
+                <?php the_post_thumbnail('medium', [
+                    'loading' => 'lazy',
+                    'sizes'   => '(max-width: 999px) 100vw, 480px',
+                ]); ?>
             </div>
         <?php endif; ?>
         <div class="news__card--content">

@@ -56,7 +56,10 @@
                                 <?php $image = get_sub_field('image'); ?>
                                 <?php if ($image) : ?>
                                     <div class="activity__image"  itemprop="image">
-                                        <?= wp_get_attachment_image($image, 'medium'); ?>
+                                        <?= wp_get_attachment_image($image, 'medium', false, [
+                                            'loading' => 'lazy',
+                                            'sizes'   => '(max-width: 599px) 100vw, 25vw',
+                                        ]); ?>
                                     </div>
                                 <?php endif; ?>
 

@@ -26,7 +26,10 @@
                             <?php $image = get_sub_field('image'); ?>
                             <?php if ($image) : ?>
                                 <div class="donation__image" itemprop="image">
-                                    <?= wp_get_attachment_image($image, 'medium'); ?>
+                                    <?= wp_get_attachment_image($image, 'medium', false, [
+                                        'loading' => 'lazy',
+                                        'sizes'   => '(max-width: 599px) 100vw, 50vw',
+                                    ]); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
