@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+/* Empêche le scroll horizontal */
+html {
+  overflow-x: hidden;
+}
+
 /* Réglages de base */
 body {
   max-width: 1920px;

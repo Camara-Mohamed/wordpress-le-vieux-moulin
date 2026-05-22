@@ -47,7 +47,9 @@
 
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
-<h1 class="sro"><?= get_the_title(); ?></h1>
+<?php if (get_the_title()) : ?>
+    <h1 class="sro"><?= get_the_title(); ?></h1>
+<?php endif; ?>
 
 <noscript>
     <p class="no-js__message">
