@@ -35,8 +35,15 @@
                     <?php unset($_SESSION['contact_form_success']); ?>
                 <?php else : ?>
 
+                    <?php if (isset($_SESSION['contact_form_errors']['recaptcha'])) : ?>
+                        <div class="contact__form--feedback contact__form-error">
+                            <?= $_SESSION['contact_form_errors']['recaptcha']; ?>
+                        </div>
+                    <?php endif; ?>
+
                     <form method="POST" action="<?= admin_url('admin-post.php'); ?>" class="form">
                         <input type="hidden" name="action" value="submit_contact_form">
+                        <input type="hidden" name="recaptcha_token" id="recaptcha_token">
 
                         <fieldset>
                             <div class="contact__form--field">

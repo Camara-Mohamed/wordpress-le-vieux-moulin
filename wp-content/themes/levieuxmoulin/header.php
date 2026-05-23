@@ -42,8 +42,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"/>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js" defer></script>
 
-    <!-- JavaScript -->
-    <script src="/wp-content/themes/levieuxmoulin/resources/js/main.js" defer type="module"></script>
 
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">

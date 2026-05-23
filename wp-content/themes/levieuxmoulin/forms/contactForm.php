@@ -4,11 +4,41 @@ use JetBrains\PhpStorm\NoReturn;
 
 #[NoReturn] function levm_handle_contact_form(): void
 {
-    // Initialiser les données de session
-    $_SESSION['contact_form_old'] = $_POST;
+    $_SESSION['contact_form_old']    = $_POST;
     $_SESSION['contact_form_errors'] = [];
 
-    // Validation
+    if (defined('RECAPTCHA_SECRET_KEY')) {
+        $token = $_POST['recaptcha_token'] ?? '';
+
+        if (empty($token)) {
+            $_SESSION['contact_form_errors']['recaptcha'] = 'Vérification de sécurité échouée. Veuillez réessayer.';
+            wp_safe_redirect(home_url('/contact'));
+            exit;
+        }
+
+        $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+            'body' => [
+                'secret'   => RECAPTCHA_SECRET_KEY,
+                'response' => $token,
+                'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '',
+            ],
+        ]);
+
+        if (is_wp_error($response)) {
+            $_SESSION['contact_form_errors']['recaptcha'] = 'Vérification de sécurité échouée. Veuillez réessayer.';
+            wp_safe_redirect(home_url('/contact'));
+            exit;
+        }
+
+        $result = json_decode(wp_remote_retrieve_body($response), true);
+
+        if (empty($result['success']) || $result['score'] < 0.5) {
+            $_SESSION['contact_form_errors']['recaptcha'] = 'Vérification de sécurité échouée. Veuillez réessayer.';
+            wp_safe_redirect(home_url('/contact'));
+            exit;
+        }
+    }
+
     $errors = [];
 
     if (empty($_POST['fullname'])) {
@@ -34,45 +64,34 @@ use JetBrains\PhpStorm\NoReturn;
         $errors['message'] = 'Veuillez entrer votre message';
     }
 
-    // Si erreurs, rediriger avec les messages
     if (!empty($errors)) {
         $_SESSION['contact_form_errors'] = $errors;
         wp_safe_redirect(home_url('/contact'));
         exit;
     }
 
-    // Nettoyage des données
     $fullname = sanitize_text_field($_POST['fullname']);
-    $email = sanitize_email($_POST['email']);
-    $phone = sanitize_text_field($_POST['phone'] ?? '');
-    $subject = sanitize_text_field($_POST['subject']);
-    $message = sanitize_textarea_field($_POST['message']);
+    $email    = sanitize_email($_POST['email']);
+    $phone    = sanitize_text_field($_POST['phone'] ?? '');
+    $subject  = sanitize_text_field($_POST['subject']);
+    $message  = sanitize_textarea_field($_POST['message']);
 
-    // Sauvegarde en base
     wp_insert_post([
-        'post_type' => 'contact_message',
-        'post_title' => $fullname . ' - ' . $subject,
+        'post_type'    => 'contact_message',
+        'post_title'   => $fullname . ' - ' . $subject,
         'post_content' => "Email: $email\nTéléphone: $phone\n\nMessage:\n$message",
-        'post_status' => 'publish',
+        'post_status'  => 'publish',
     ]);
 
-    // Envoi d'email
-    $to = 'camara.mohmd@gmail.com';
-    $email_subject = sprintf(
-        'Nouveau message de contact: %s',
-        $subject
-    );
-    $email_message = sprintf("Nom: %s\nEmail: %s\nTéléphone: %s\nSujet: %s\n\nMessage:\n%s",
-        $fullname,
-        $email,
-        $phone,
-        $subject,
-        $message
+    $to            = 'camara.mohmd@gmail.com';
+    $email_subject = sprintf('Nouveau message de contact: %s', $subject);
+    $email_message = sprintf(
+        "Nom: %s\nEmail: %s\nTéléphone: %s\nSujet: %s\n\nMessage:\n%s",
+        $fullname, $email, $phone, $subject, $message
     );
 
     wp_mail($to, $email_subject, $email_message);
 
-    // Message de succès
     $_SESSION['contact_form_success'] = 'Merci pour votre message ! Nous vous répondrons dès que possible.';
     unset($_SESSION['contact_form_old']);
     unset($_SESSION['contact_form_errors']);
