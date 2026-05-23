@@ -1,5 +1,5 @@
 <footer class="footer">
-    <h2 class="sro" aria-level="2">Navigation de pied de page</h2>
+    <h2 class="sro">Navigation de pied de page</h2>
 
     <div class="footer__container">
         <section class="footer__section">

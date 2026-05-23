@@ -84,16 +84,18 @@ img {
 
 /* Lien de saut de navigation */
 .skip__link {
-  position: absolute;
+  position: fixed;
   top: -9999px;
-  left: 0;
+  left: 0.5rem;
+  background-color: var(--c-white);
   color: var(--c-brown);
   border: 0.0625rem solid var(--c-brown);
-  padding: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
   z-index: 9999;
 
   &:focus {
-    top: 3.5rem;
+    top: 0.5rem;
   }
 }
 

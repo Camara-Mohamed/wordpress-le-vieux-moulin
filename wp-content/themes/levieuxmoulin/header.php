@@ -78,13 +78,13 @@
 
     <!-- Navigation principale -->
     <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
-        <h2 class="sro" aria-level="2">Navigation principale</h2>
+        <h2 class="sro">Navigation principale</h2>
 
-        <a class="header__nav--title" itemprop="url" href="<?= home_url('/'); ?>" itemprop="url"
+        <a class="header__nav--title" itemprop="url" href="<?= home_url('/'); ?>"
            title="Aller à la page d'accueil"><?= get_bloginfo('name') ?>
         </a>
 
-        <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal"/>
+        <input type="checkbox" id="burger-menu" class="sro burger-checkbox" aria-label="Menu principal" aria-controls="primary-navigation"/>
         <label for="burger-menu" class="header__nav--burger">
             <span class="sro">Burger Menu</span>
             <svg class="burger-icon" viewBox="0 0 448 512" width="35" height="35">
@@ -95,7 +95,7 @@
             </svg>
         </label>
 
-        <ul class="header__nav--container">
+        <ul id="primary-navigation" class="header__nav--container">
             <?php foreach (levm_get_navigation_links('header') as $link): ?>
                 <li itemprop="name" class="nav__item<?= $link->current ? ' nav__item--current' : '' ?>">
                     <a href="<?= $link->href ?>" class="nav__item--link" title="Aller à la page : <?= $link->label ?>" itemprop="url">

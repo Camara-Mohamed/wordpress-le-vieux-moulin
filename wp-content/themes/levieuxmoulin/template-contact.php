@@ -29,23 +29,25 @@
                 <p class="contact__form--note"><abbr title="Champs Obligatoire">*</abbr> (Champs obligatoires)</p>
 
                 <?php if (isset($_SESSION['contact_form_success'])) : ?>
-                    <div class="contact__form--feedback contact__form-success">
+                    <div class="contact__form--feedback contact__form-success" role="status">
                         <?= $_SESSION['contact_form_success']; ?>
                     </div>
                     <?php unset($_SESSION['contact_form_success']); ?>
                 <?php else : ?>
 
                     <?php if (isset($_SESSION['contact_form_errors']['recaptcha'])) : ?>
-                        <div class="contact__form--feedback contact__form-error">
+                        <div class="contact__form--feedback contact__form-error" role="alert">
                             <?= $_SESSION['contact_form_errors']['recaptcha']; ?>
                         </div>
                     <?php endif; ?>
 
-                    <form method="POST" action="<?= admin_url('admin-post.php'); ?>" class="form">
+                    <form method="POST" action="<?= admin_url('admin-post.php'); ?>" class="form" novalidate>
                         <input type="hidden" name="action" value="submit_contact_form">
                         <input type="hidden" name="recaptcha_token" id="recaptcha_token">
 
                         <fieldset>
+                            <legend class="sro">Formulaire de contact</legend>
+
                             <div class="contact__form--field">
                                 <label for="fullname" class="contact__form--label">
                                     Nom complet ou société
@@ -54,10 +56,12 @@
                                 <input type="text" id="fullname" name="fullname" required
                                        class="contact__form--input"
                                        value="<?= $_SESSION['contact_form_old']['fullname'] ?? ''; ?>"
-                                       placeholder="Votre nom ou société">
-                                <?php if (isset($_SESSION['contact_form_errors']['fullname'])) : ?>
-                                    <span class="contact__form--error"><?= $_SESSION['contact_form_errors']['fullname']; ?></span>
-                                <?php endif; ?>
+                                       placeholder="Votre nom ou société"
+                                       aria-describedby="fullname-error"
+                                       <?= isset($_SESSION['contact_form_errors']['fullname']) ? 'aria-invalid="true"' : ''; ?>>
+                                <span id="fullname-error" class="contact__form--error"<?= isset($_SESSION['contact_form_errors']['fullname']) ? ' role="alert"' : ''; ?>>
+                                    <?= $_SESSION['contact_form_errors']['fullname'] ?? ''; ?>
+                                </span>
                             </div>
 
                             <div class="contact__form--field">
@@ -67,10 +71,12 @@
                                 </label>
                                 <input type="email" id="email" name="email" required class="contact__form--input"
                                        value="<?= $_SESSION['contact_form_old']['email'] ?? ''; ?>"
-                                       placeholder="votre@email.com">
-                                <?php if (isset($_SESSION['contact_form_errors']['email'])) : ?>
-                                    <span class="contact__form--error"><?= $_SESSION['contact_form_errors']['email']; ?></span>
-                                <?php endif; ?>
+                                       placeholder="votre@email.com"
+                                       aria-describedby="email-error"
+                                       <?= isset($_SESSION['contact_form_errors']['email']) ? 'aria-invalid="true"' : ''; ?>>
+                                <span id="email-error" class="contact__form--error"<?= isset($_SESSION['contact_form_errors']['email']) ? ' role="alert"' : ''; ?>>
+                                    <?= $_SESSION['contact_form_errors']['email'] ?? ''; ?>
+                                </span>
                             </div>
 
                             <div class="contact__form--field">
@@ -79,10 +85,12 @@
                                 </label>
                                 <input type="tel" id="phone" name="phone" class="contact__form--input"
                                        value="<?= $_SESSION['contact_form_old']['phone'] ?? ''; ?>"
-                                       placeholder="+32 123 45 67 89">
-                                <?php if (isset($_SESSION['contact_form_errors']['phone'])) : ?>
-                                    <span class="contact__form--error"><?= $_SESSION['contact_form_errors']['phone']; ?></span>
-                                <?php endif; ?>
+                                       placeholder="+32 123 45 67 89"
+                                       aria-describedby="phone-error"
+                                       <?= isset($_SESSION['contact_form_errors']['phone']) ? 'aria-invalid="true"' : ''; ?>>
+                                <span id="phone-error" class="contact__form--error"<?= isset($_SESSION['contact_form_errors']['phone']) ? ' role="alert"' : ''; ?>>
+                                    <?= $_SESSION['contact_form_errors']['phone'] ?? ''; ?>
+                                </span>
                             </div>
 
                             <div class="contact__form--field">
@@ -90,7 +98,9 @@
                                     Sujet
                                     <abbr title="Champs Obligatoire">*</abbr>
                                 </label>
-                                <select id="subject" name="subject" required class="contact__form--select">
+                                <select id="subject" name="subject" required class="contact__form--select"
+                                        aria-describedby="subject-error"
+                                        <?= isset($_SESSION['contact_form_errors']['subject']) ? 'aria-invalid="true"' : ''; ?>>
                                     <option value="">Sélectionnez un sujet...</option>
                                     <option value="Don" <?= isset($_SESSION['contact_form_old']['subject']) && $_SESSION['contact_form_old']['subject'] === 'Don' ? 'selected' : ''; ?>>
                                         Don
@@ -101,16 +111,16 @@
                                     <option value="Partenariat" <?= isset($_SESSION['contact_form_old']['subject']) && $_SESSION['contact_form_old']['subject'] === 'Partenariat' ? 'selected' : ''; ?>>
                                         Partenariat
                                     </option>
-                                    <option value="Famille d'accueil" <?= isset($_SESSION['contact_form_old']['subject']) && $_SESSION['contact_form_old']['subject'] === 'Famille d\'accueil' ? 'selected' : ''; ?>>
+                                    <option value="Famille d'accueil" <?= isset($_SESSION['contact_form_old']['subject']) && $_SESSION['contact_form_old']['subject'] === "Famille d'accueil" ? 'selected' : ''; ?>>
                                         Famille d'accueil
                                     </option>
                                     <option value="Autre" <?= isset($_SESSION['contact_form_old']['subject']) && $_SESSION['contact_form_old']['subject'] === 'Autre' ? 'selected' : ''; ?>>
                                         Autre
                                     </option>
                                 </select>
-                                <?php if (isset($_SESSION['contact_form_errors']['subject'])) : ?>
-                                    <span class="contact__form--error"><?= $_SESSION['contact_form_errors']['subject']; ?></span>
-                                <?php endif; ?>
+                                <span id="subject-error" class="contact__form--error"<?= isset($_SESSION['contact_form_errors']['subject']) ? ' role="alert"' : ''; ?>>
+                                    <?= $_SESSION['contact_form_errors']['subject'] ?? ''; ?>
+                                </span>
                             </div>
 
                             <div class="contact__form--field">
@@ -120,10 +130,12 @@
                                 </label>
                                 <textarea id="message" name="message" rows="8" required
                                           class="contact__form--textarea"
-                                          placeholder="Votre message ici..."><?= $_SESSION['contact_form_old']['message'] ?? ''; ?></textarea>
-                                <?php if (isset($_SESSION['contact_form_errors']['message'])) : ?>
-                                    <span class="contact__form--error"><?= $_SESSION['contact_form_errors']['message']; ?></span>
-                                <?php endif; ?>
+                                          placeholder="Votre message ici..."
+                                          aria-describedby="message-error"
+                                          <?= isset($_SESSION['contact_form_errors']['message']) ? 'aria-invalid="true"' : ''; ?>><?= $_SESSION['contact_form_old']['message'] ?? ''; ?></textarea>
+                                <span id="message-error" class="contact__form--error"<?= isset($_SESSION['contact_form_errors']['message']) ? ' role="alert"' : ''; ?>>
+                                    <?= $_SESSION['contact_form_errors']['message'] ?? ''; ?>
+                                </span>
                             </div>
                         </fieldset>
 
